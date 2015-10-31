@@ -19,11 +19,12 @@ public class DepBusiness extends HttpServlet{
         
         if ("Dep.formAlterar".equals(request.getParameter("command"))) 
         { 
-            System.out.println(request.getParameter("codigo"));
+            //System.out.println(request.getParameter("codigo"));
             //Convertendo de string para int
             Integer codigo = Integer.parseInt(request.getParameter("codigo"));         
             Departamento dep = new DepartamentoDao().id(codigo);
             
+            //Colocar o dep na sessão
             HttpSession sessao = request.getSession(true); 
             sessao.setAttribute("dep", dep);
      

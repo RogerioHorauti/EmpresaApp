@@ -7,9 +7,9 @@
     </head>
     <body>
         <h3>Aterar o departamento</h3>
-        <form method="POST" action="${pageContext.request.contextPath}/principal?command=Dep.alterar">
+        <form method="POST" action="${pageContext.request.contextPath}/principal">
             <!-- Aqui envia o valor Cargo.inserir, e o nome do imput é command -->
-            <input type="hidden" name="command" value="Cargo.inserir"/>
+            <input type="hidden" name="command" value="Dep.alterar"/>
             <label for="nome">Codigo: </label>
             <input value="${dep.codigo}" type="text" name="codigo" size="30"/><br/><br/>
             <label for="nome">Nome: </label>

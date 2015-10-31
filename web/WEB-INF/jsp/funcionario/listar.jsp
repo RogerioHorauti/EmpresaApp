@@ -32,8 +32,8 @@
                     <!--    Note que eu chamei o método .time, pois o atributo dataContratacao do func é do tipo Calendar 
                     e a tag formatDate espera um objeto do tipo Date. -->
                     <td> <fmt:formatDate pattern="dd/MM/yyyy" value="${func.dataContratacao.time}"/> </td>
-                    <td> <a href="${pageContext.request.contextPath}/principal?command=Func.alterar">alterar</a> </td>
-                    <td> <a href="${pageContext.request.contextPath}/principal?command=Func.remover">remover</a> </td>
+                    <td> <a href="${pageContext.request.contextPath}/principal?command=Func.formAlterar&codigo=${func.codigo}">alterar</a> </td>
+                    <td> <a href="${pageContext.request.contextPath}/principal?command=Func.remover&codigo=${func.codigo}">remover</a> </td>
                 </tr>  
             </c:forEach>
         </table>

@@ -13,10 +13,12 @@ import javax.servlet.http.HttpSession;
 
 @WebServlet(name = "CargoBusiness", urlPatterns = {"/cargo"})
 public class CargoBusiness extends HttpServlet {
-
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        /*Chamada para o form Alterar
+        ===============================================================*/
         if ("Cargo.formAlterar".equals(request.getParameter("command"))) 
         { 
             System.out.println(request.getParameter("codigo"));
@@ -31,6 +33,8 @@ public class CargoBusiness extends HttpServlet {
             dispatcher.forward(request, response);
         }
         
+        /*Chamada para a função remover cargo
+        ===============================================================*/
         if ("Cargo.remover".equals(request.getParameter("command"))) 
         { 
             CargoDao dao = new  CargoDao();
@@ -40,7 +44,9 @@ public class CargoBusiness extends HttpServlet {
             //Redireciona para o form cargo/listar.jsp
             response.sendRedirect("principal?command=Cargo.listar");
         }
-         
+        
+        /*Chamada para a função listar cargo
+        ===============================================================*/
         if ("Cargo.listar".equals(request.getParameter("command"))) 
         { 
             //Enviando o objeto populado cargos para o form listar
@@ -49,15 +55,18 @@ public class CargoBusiness extends HttpServlet {
             dispatcher.forward(request, response);
         }
         
+        /*Chamada para o form inserir cargo
+        ===============================================================*/
         if ("Cargo.formulario".equals(request.getParameter("command"))) 
         {
-            //Chamada para o form inserir cargo
             RequestDispatcher dispatcher = request.getRequestDispatcher("WEB-INF/jsp/cargo/inserir.jsp");
             dispatcher.forward(request, response);
         }
-        //Se o valor do input command for Cargo.inserir então
-        if ("Cargo.inserir".equals(request.getParameter("command"))) 
-        {
+        
+        /*Chamada para a função inserir cargo
+        ===============================================================*/    
+        if ("Cargo.inserir".equals(request.getParameter("command")))
+        { //Se o valor do input command for Cargo.inserir então
             Cargo cargo = new Cargo();
             //  Chama o metodo getParameter(String) do objeto HttpServletRequest para pegar o resultado
             //vindo do formulário, no caso Cargo/inserir.jsp
@@ -71,6 +80,8 @@ public class CargoBusiness extends HttpServlet {
             dispatcher.forward(request, response);
         }
         
+         /*Chamada para a função alterar cargo
+        ===============================================================*/   
         if ("Cargo.alterar".equals(request.getParameter("command"))) 
         {
             Cargo cargo = new Cargo();

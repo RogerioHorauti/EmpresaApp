@@ -7,10 +7,10 @@
     </head>
     <body>
         <h3>Alterar cargo</h3>
-        <form action="${pageContext.request.contextPath}/principal?command=Cargo.alterar" method="POST">
+        <form action="${pageContext.request.contextPath}/principal" method="POST">
            
                 <!-- Aqui envia o valor Cargo.inserir, e o nome do imput é command -->
-                <input type="hidden" name="command" value="Cargo.inserir"/>
+                <input type="hidden" name="command" value="Cargo.alterar"/>
                 <label for="nome">Codigo: </label>
                 <!--
                     Um exemplo de como pegamos o valor passado via GET
