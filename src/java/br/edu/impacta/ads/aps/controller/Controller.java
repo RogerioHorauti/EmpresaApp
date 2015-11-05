@@ -11,19 +11,32 @@ import javax.servlet.http.HttpServletResponse;
 public class Controller extends HttpServlet {
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        //Se o valor do input não estiver vazio então
-        if (request.getParameter("command") != null) {
-            //
+            throws ServletException, IOException 
+    {
+        //HttpServletRequest request:
+        //Se o valor passado do input não estiver vazio então
+        if (request.getParameter("command") != null) 
+        {
+            //.startsWith("Cargo."):
+            //Determina se a atual Cadeia de Caracteres começa com o conteúdo 
             if (request.getParameter("command").startsWith("Cargo.")) {
+                //getRequestDispatcher:
+                //permite incluir conteúdo em uma solicitação
+                //Forwards:
+                //prossegue com o pedido de um servlet para outro recurso (servlet, JSP, HTML ou arquivo) no servidor.
+                //HttpServletResponse response
                 //@WebServlet(name = "CargoBusiness", urlPatterns = {"/cargo"})
-                request.getRequestDispatcher("/cargo").forward(request, response);
+                request.getRequestDispatcher("/cargo").forward(request, response);             
             }
-             if (request.getParameter("command").startsWith("Dep.")) {
-                //@WebServlet(name = "DepBusiness", urlPatterns = "/dep")                 
+            
+            if (request.getParameter("command").startsWith("Dep.")) 
+            {       
+                //@WebServlet(name = "DepBusiness", urlPatterns = "/dep")  
                 request.getRequestDispatcher("/dep").forward(request, response);
             }
-              if (request.getParameter("command").startsWith("Func.")) {
+           
+            if (request.getParameter("command").startsWith("Func.")) 
+            {       
                 //@WebServlet(name = "DepBusiness", urlPatterns = "/func")
                 request.getRequestDispatcher("/func").forward(request, response);
             }

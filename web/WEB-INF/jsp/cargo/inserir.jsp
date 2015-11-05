@@ -7,6 +7,14 @@
     </head>
     <body>
         <h3>Novo cargo</h3>
+        <!--pageContext:
+            permite o acesso a vários atributos de página
+        	getContextPath () 
+                Retorna o caminho do contexto da aplicação web.
+        
+            A action pega o contexto, empresa, mais o /principal, que é a servlet Controller.
+            A ação está no input command, Cargo.inserir 
+        -->
         <form method="POST" action="${pageContext.request.contextPath}/principal">
             <!-- Aqui envia o valor Cargo.inserir, e o nome do imput é command -->
             <input type="hidden" name="command" value="Cargo.inserir"/>
