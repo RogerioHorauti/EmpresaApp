@@ -13,9 +13,9 @@ public class CargoDao implements GenericoDao<Cargo>{
        
         EntityManager entityManager = Conexao.getEntityManager();
         entityManager.getTransaction().begin();
-        
+        // Passa para o estado gerenciado
         entityManager.persist(cargo);
-            
+        // Só vai de fato para o banco quando fizermos commit na transação
         entityManager.getTransaction().commit();
         entityManager.close();
     }
