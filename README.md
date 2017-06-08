@@ -1,2 +1,3 @@
 # EmpresaApp
-CRUD com JPA e MVC com Servlet e JSP (link para o banco de dados)
+
+Implementação do JPA e MVC com Servlet e JSP, banco de dados se encontra no Script-Empresa
